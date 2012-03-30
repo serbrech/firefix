@@ -1,3 +1,4 @@
+# encoding: UTF-8
 CONFIG = {
   :backup_extension => 'pp3.backup',
   :home_path => ENV['HOME'],

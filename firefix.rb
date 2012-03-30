@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'src/console_helpers.rb'
 require 'src/firefix.rb'
 require 'config.rb'

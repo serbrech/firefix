@@ -1,3 +1,4 @@
+# encoding: UTF-8
 USER_CONFIG = {
 
 # Change to match the indesign version installed on your system
