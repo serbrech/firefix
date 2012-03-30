@@ -13,7 +13,7 @@ If the backups files are already present, the script will tell you that and will
 
 IMPORTANT!
 1. Firefox needs to be CLOSED before running the script!
-2. Remember to open the script in a texteditor and change/enter the UNC path to the PagePlanner 3 server 
+2. Remember to open the config.rb file in a texteditor and change/enter the URL to the PagePlanner 3 
 3. Run the script as administrator (sudo)
 
 --
