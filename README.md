@@ -15,7 +15,7 @@ If the backups files are already present, the script will tell you that and will
 2. Remember to open the config.rb file in a texteditor and change/enter the URL to the PagePlanner 3 
 3. Run the script as administrator (sudo)
 
-### To run the script
+## To run the script
 In the terminal : 
 
 Navigate to the folder that contains the script and type the command: 
