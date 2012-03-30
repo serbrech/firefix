@@ -3,7 +3,6 @@
 # FireFix script for Firefox on MAC 
 ## enables PDF's and InDesign to be opended through browser
 
-
 The script is compatible with ruby 1.8.6 and up which is installed by default on every system running MacOs X 
 (Mac os uses ruby 1.8.6 internally)
 
@@ -16,9 +15,7 @@ If the backups files are already present, the script will tell you that and will
 2. Remember to open the config.rb file in a texteditor and change/enter the URL to the PagePlanner 3 
 3. Run the script as administrator (sudo)
 
---
-
-## To run the script
+### To run the script
 In the terminal : 
 
 Navigate to the folder that contains the script and type the command: 
