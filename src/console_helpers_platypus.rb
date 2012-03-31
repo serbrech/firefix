@@ -1,15 +1,15 @@
 # encoding: UTF-8
 module Colorize
   def colorize(text, color_code)
-    "\e[#{color_code}m#{text}\e[0m"
+    "<p style='color:#{color_code};'>#{text}</p>"
   end
 
   def red(text) 
-    colorize(text, 31) 
+    colorize(text, '#FF0000') 
   end
 
   def green(text) 
-    colorize(text, 32) 
+    colorize(text, '#00CD00') 
   end
 
   def debug text

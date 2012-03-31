@@ -2,9 +2,10 @@
 require 'fileutils'
 
 class Firefix
+  include Colorize
 
   def backup_already_there_message file_path
-    puts red("there is already a file named #{file_path}.#{CONFIG[:backup_extension]}. this probably means that the fix has already been applied.")
+    puts red("There is already a file named #{file_path}.#{CONFIG[:backup_extension]}.\nThis probably means that the fix has already been applied.\n")
   end
 
   def backup_file_exist? file_path
@@ -17,7 +18,7 @@ class Firefix
 
   def backup_file file_path
     return false if backup_file_exist? file_path
-    puts "backing up #{file_path}"
+    puts "backing up #{file_path}\n"
 
     FileUtils::touch(file_path);
     FileUtils::cp(file_path, "#{file_path}.#{CONFIG[:backup_extension]}") unless File.exists?("#{file_path}.#{CONFIG[:backup_extension]}")
@@ -26,7 +27,7 @@ class Firefix
   end
 
   def process_js js_path
-    puts "\n#{js_path}" 
+    puts "#{js_path}\n" 
     return if backup_file_exist? js_path
 
     backup_file js_path
@@ -38,9 +39,9 @@ class Firefix
   end
 
   def process_rdf rdf_path
-    puts "\n#{rdf_path}"
+    puts "#{rdf_path}\n"
     unless File.exist? rdf_path
-      FileUtils::cp "src/mimeTypes.rdf", rdf_path
+      FileUtils::cp "./src/mimeTypes.rdf", rdf_path
     end
 
     return if backup_file_exist? rdf_path
@@ -58,7 +59,7 @@ class Firefix
   end
 
   def process_profile path
-    puts "\nProcessing profile #{path}"
+    puts "Processing profile #{path}\n"
     prefs_path = "#{path}/prefs.js"
     js_path = "#{path}/user.js"
     rdf_path = "#{path}/mimeTypes.rdf"
@@ -74,21 +75,21 @@ class Firefix
   end
 
   def rollback file_path
-    puts "rolling back #{file_path}"
+    puts "rolling back #{file_path}\n"
     backup_file = "#{file_path}.#{CONFIG[:backup_extension]}"
     if(File.exists?(backup_file))
       File.rename( backup_file, "#{file_path}" ) 
     else
-      puts red("could not find backup for #{file_path}")
+      puts red("Could not find backup for #{file_path}")
     end
   end
 
   def rollback_profiles profile
-    puts "rolling back #{profile}"
+    puts "Rolling back #{profile}\n"
     rollback("#{profile}/prefs.js")
     rollback("#{profile}/user.js")
     rollback("#{profile}/mimeTypes.rdf")
-    puts "rollback done"
+    puts "Rollback done\n"
   end
 
   def process_or_rollback_profile profile
